@@ -87,11 +87,15 @@ function showOptions(keys) {
   setOptions(keys.map(k => ({ label: ACTIONS[k].label, ghost: ACTIONS[k].ghost, action: () => pick(k) })));
 }
 
+let askedMore = false;
 function pick(key) {
   addMsg(ACTIONS[key].label, 'user');
   typing(() => {
     ACTIONS[key].run();
-    addMsg('¿Algo más en lo que pueda ayudarte?');
+    if (!askedMore) {
+      addMsg('¿Algo más en lo que pueda ayudarte?');
+      askedMore = true;
+    }
     showOptions(Object.keys(ACTIONS));
   });
 }
