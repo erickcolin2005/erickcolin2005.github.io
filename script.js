@@ -1,7 +1,7 @@
 // ---- Datos de contacto (edita aquí) ----
 const CONTACT = {
   email: 'ercoalhe2@gmail.com',
-  phone: '+57 300 000 0000', // TODO: reemplaza por tu número real
+  phone: '+57 315 604 2115',
   linkedin: { label: 'erick-albornoz', url: 'https://www.linkedin.com/in/erick-albornoz' },
   github: { label: 'erickcolin2005', url: 'https://github.com/erickcolin2005' },
 };
@@ -75,7 +75,8 @@ function hire() {
     addMsg(
       '¡Genial! Erick siempre está abierto a nuevas oportunidades. Puedes contactarlo directamente:' +
       `<div class="field"><b>Email</b><a href="mailto:${CONTACT.email}">${CONTACT.email}</a></div>` +
-      `<div class="field"><b>Teléfono</b><span>${esc(CONTACT.phone)}</span></div>`
+      `<div class="field"><b>Teléfono</b><a href="tel:${CONTACT.phone.replace(/\s/g, '')}">${esc(CONTACT.phone)}</a></div>` +
+      `<div class="field"><b>WhatsApp</b><a href="https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>`
     );
     reset();
   });
