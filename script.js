@@ -57,7 +57,7 @@ const I18N = {
     'projects.uribiaTitle': 'Uribia — NASA POWER', 'projects.uribiaDesc': 'Validación y simulación de radiación solar en Uribia (La Guajira) con datos de NASA POWER 2018–2025.',
     'certs.title': 'Certificados',
     'certs.intro': '25 certificaciones en desarrollo, nube, datos, IA y gobernanza digital — de Código Facilito, Santander Open Academy (MIT), AWS, MinTIC, Capacítate, MathWorks, COPNIA y más.',
-    'certs.cta': 'Ver mis 25 certificados ↓', 'certs.ctaOpen': 'Ocultar certificados ↑',
+    'certs.cta': 'Ver mis 25 certificados ↓', 'certs.ctaOpen': 'Ocultar certificados ↑', 'certs.see': 'Ver ↗',
     'certs.cfSub': '9 cursos · Desarrollo', 'certs.cfArq': 'Fundamentos de Arquitectura de Software', 'certs.cfDatos': 'Bases y conceptos de la Ciencia de Datos', 'certs.cfMet': 'Metodologías para Solución de Problemas', 'certs.cfTypes': 'Anotaciones y Type Hints con Python',
     'certs.saSub': '3 cursos · Contenido MIT',
     'certs.awsSub': '3 cursos · Nube', 'certs.awsNube': 'Fundamentos de Nube <span class="cert-date">sep 2025</span>',
@@ -88,7 +88,7 @@ const I18N = {
     'projects.uribiaTitle': 'Uribia — NASA POWER', 'projects.uribiaDesc': 'Validation and simulation of solar radiation in Uribia (La Guajira) using NASA POWER data 2018–2025.',
     'certs.title': 'Certificates',
     'certs.intro': '25 certifications in development, cloud, data, AI and digital governance — from Código Facilito, Santander Open Academy (MIT), AWS, MinTIC, Capacítate, MathWorks, COPNIA and more.',
-    'certs.cta': 'View my 25 certificates ↓', 'certs.ctaOpen': 'Hide certificates ↑',
+    'certs.cta': 'View my 25 certificates ↓', 'certs.ctaOpen': 'Hide certificates ↑', 'certs.see': 'View ↗',
     'certs.cfSub': '9 courses · Development', 'certs.cfArq': 'Software Architecture Fundamentals', 'certs.cfDatos': 'Data Science Basics &amp; Concepts', 'certs.cfMet': 'Problem-Solving Methodologies', 'certs.cfTypes': 'Annotations &amp; Type Hints with Python',
     'certs.saSub': '3 courses · MIT content',
     'certs.awsSub': '3 courses · Cloud', 'certs.awsNube': 'Cloud Fundamentals <span class="cert-date">Sep 2025</span>',
@@ -111,6 +111,7 @@ function applyLang(l) {
     if (v != null) el.innerHTML = v;
   });
   document.getElementById('langToggle').textContent = l.toUpperCase();
+  document.documentElement.style.setProperty('--see-label', JSON.stringify(I18N[l]['certs.see']));
   // refrescar CTA de certificados según estado actual
   const open = !certGroups.hasAttribute('hidden');
   certToggle.innerHTML = I18N[l][open ? 'certs.ctaOpen' : 'certs.cta'];

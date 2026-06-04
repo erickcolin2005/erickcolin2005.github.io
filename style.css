@@ -191,13 +191,19 @@ section h2 {
 .cert-group ul { list-style: none; display: flex; flex-direction: column; gap: 2px; }
 .cert-group li { font-size: 14px; }
 .cert-group li a {
-  display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap;
-  padding: 6px 8px 6px 24px; position: relative; color: #e2e8f0; border-radius: 8px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 7px 8px 7px 26px; position: relative; color: #e2e8f0; border-radius: 8px;
   transition: background .15s, color .15s;
 }
-.cert-group li a::before { content: '✓'; position: absolute; left: 6px; color: var(--brand); font-weight: 700; }
-.cert-group li a:hover { background: rgba(245,158,11,.10); color: #fff; }
-.cert-group li a:hover::before { content: '↗'; }
+.cert-group li a::before { content: '✓'; position: absolute; left: 8px; color: var(--brand); font-weight: 700; }
+.cert-group li a::after {
+  content: var(--see-label, "Ver ↗"); margin-left: auto; white-space: nowrap;
+  font-size: 11px; font-weight: 700; color: var(--brand);
+  background: var(--chip-bg); border: 1px solid var(--chip-line);
+  padding: 2px 9px; border-radius: 999px; transition: background .15s, color .15s;
+}
+.cert-group li a:hover { background: rgba(245,158,11,.10); color: var(--text); }
+.cert-group li a:hover::after { background: var(--brand); color: #0f172a; border-color: var(--brand); }
 .cert-date { color: var(--muted); font-size: 11.5px; white-space: nowrap; }
 
 .muted { color: var(--muted); }
