@@ -139,6 +139,24 @@ section h2 {
   background: rgba(37,99,235,.12); border: 1px solid rgba(37,99,235,.25); color: #cbd5e1;
 }
 
+/* EXPERIENCE */
+.exp-list { display: flex; flex-direction: column; gap: 16px; }
+.exp-item {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 20px 22px;
+  border-left: 3px solid var(--brand); transition: transform .18s, border-color .2s, box-shadow .2s;
+}
+.exp-item:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,0,0,.3); }
+.exp-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.exp-head h3 { font-size: 19px; }
+.exp-org { color: var(--brand); font-weight: 700; font-size: 15px; }
+.exp-org::before { content: '· '; color: var(--muted); }
+.exp-meta { display: block; color: var(--muted); font-size: 13px; margin: 4px 0 12px; }
+.exp-item p { color: var(--muted); font-size: 15px; margin-bottom: 10px; }
+.exp-item ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.exp-item li { position: relative; padding-left: 20px; color: var(--muted); font-size: 14.5px; }
+.exp-item li::before { content: '▹'; position: absolute; left: 0; color: var(--brand); }
+
 /* PROJECTS */
 .project {
   display: block; background: var(--surface); border: 1px solid var(--line);
