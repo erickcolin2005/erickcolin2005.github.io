@@ -129,6 +129,35 @@ section h2 {
   background: rgba(245,158,11,.12); border: 1px solid rgba(245,158,11,.25); color: #fcd34d;
 }
 
+/* CERTIFICATES */
+.cert-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 18px; }
+.cert-group {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px 20px; transition: border-color .2s, transform .15s;
+}
+.cert-group:hover { border-color: var(--brand); transform: translateY(-3px); }
+.cert-org { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.cert-org b { display: block; font-size: 15px; }
+.cert-org small { color: var(--muted); font-size: 12px; }
+.cert-badge {
+  width: 40px; height: 40px; border-radius: 11px; flex-shrink: 0;
+  display: grid; place-items: center; font-weight: 800; font-size: 13px; color: #fff;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+.cert-badge.cf { background: #00b8d4; }
+.cert-badge.sa { background: #ec0000; }
+.cert-badge.aws { background: #ff9900; color: #0f172a; font-size: 11px; }
+.cert-badge.cap { background: #16a34a; }
+.cert-badge.mintic { background: #2563eb; }
+.cert-badge.other { background: var(--brand); color: #0f172a; font-size: 20px; }
+.cert-group ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.cert-group li {
+  font-size: 14px; padding-left: 22px; position: relative; color: #e2e8f0;
+  display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap;
+}
+.cert-group li::before { content: '✓'; position: absolute; left: 0; color: var(--brand); font-weight: 700; }
+.cert-date { color: var(--muted); font-size: 11.5px; white-space: nowrap; }
+
 /* NOTES */
 .muted { color: var(--muted); }
 .notes-list { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
@@ -209,6 +238,6 @@ footer i { color: var(--muted); display: block; margin: 10px 0; }
   .hero-row { flex-direction: column; text-align: center; }
   .lede { margin-inline: auto; }
   .cta { justify-content: center; }
-  .stack, .project-grid { grid-template-columns: 1fr; }
+  .stack, .project-grid, .cert-groups { grid-template-columns: 1fr; }
   .hero-text h1 { font-size: 30px; }
 }
