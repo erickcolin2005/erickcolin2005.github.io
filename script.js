@@ -55,57 +55,53 @@ function typing(then) {
   setTimeout(() => { t.remove(); then(); }, 650);
 }
 
-const MENU = [
-  { label: 'Quiero contratarte', action: hire },
-  { label: 'Enlaces profesionales', action: links },
-  { label: 'Solo vine a saludar 👋', action: hello, ghost: true },
-];
+const ACTIONS = {
+  hire: {
+    label: 'Quiero contratarte',
+    run() {
+      addMsg('¡Genial! Erick siempre está abierto a nuevas oportunidades. Puedes contactarlo directamente:' +
+        `<div class="field"><b>Email</b><a href="mailto:${CONTACT.email}">${CONTACT.email}</a></div>` +
+        `<div class="field"><b>Teléfono</b><a href="tel:${CONTACT.phone.replace(/\s/g, '')}">${esc(CONTACT.phone)}</a></div>` +
+        `<div class="field"><b>WhatsApp</b><a href="https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>`);
+    },
+  },
+  links: {
+    label: 'Enlaces profesionales',
+    run() {
+      addMsg('Aquí están sus perfiles y repositorios:' +
+        `<div class="field"><b>LinkedIn</b><a href="${CONTACT.linkedin.url}" target="_blank" rel="noopener">${CONTACT.linkedin.label}</a></div>` +
+        `<div class="field"><b>GitHub</b><a href="${CONTACT.github.url}" target="_blank" rel="noopener">${CONTACT.github.label}</a></div>`);
+    },
+  },
+  hello: {
+    label: 'Solo vine a saludar 👋',
+    ghost: true,
+    run() {
+      addMsg('¡Hola! 👋 Erick agradece que pases por aquí. Si quieres conversar, escríbele un correo cuando gustes:' +
+        `<div class="field"><b>Email</b><a href="mailto:${CONTACT.email}">${CONTACT.email}</a></div>`);
+    },
+  },
+};
 
-function reset() {
-  setTimeout(() => setOptions([
-    { label: 'Quiero contratarte', action: hire },
-    { label: 'Enlaces profesionales', action: links },
-    { label: 'Otra cosa', action: () => { addMsg('¡Claro! ¿Qué necesitas?', 'bot'); setOptions(MENU); }, ghost: true },
-  ]), 50);
+function showOptions(keys) {
+  setOptions(keys.map(k => ({ label: ACTIONS[k].label, ghost: ACTIONS[k].ghost, action: () => pick(k) })));
 }
 
-function hire() {
-  addMsg('Quiero contratarte', 'user');
+function pick(key) {
+  addMsg(ACTIONS[key].label, 'user');
+  const rest = Object.keys(ACTIONS).filter(k => k !== key);
   typing(() => {
-    addMsg(
-      '¡Genial! Erick siempre está abierto a nuevas oportunidades. Puedes contactarlo directamente:' +
-      `<div class="field"><b>Email</b><a href="mailto:${CONTACT.email}">${CONTACT.email}</a></div>` +
-      `<div class="field"><b>Teléfono</b><a href="tel:${CONTACT.phone.replace(/\s/g, '')}">${esc(CONTACT.phone)}</a></div>` +
-      `<div class="field"><b>WhatsApp</b><a href="https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>`
-    );
-    reset();
-  });
-}
-
-function links() {
-  addMsg('Enlaces profesionales', 'user');
-  typing(() => {
-    addMsg(
-      'Aquí están sus perfiles y repositorios:' +
-      `<div class="field"><b>LinkedIn</b><a href="${CONTACT.linkedin.url}" target="_blank" rel="noopener">${CONTACT.linkedin.label}</a></div>` +
-      `<div class="field"><b>GitHub</b><a href="${CONTACT.github.url}" target="_blank" rel="noopener">${CONTACT.github.label}</a></div>`
-    );
-    reset();
-  });
-}
-
-function hello() {
-  addMsg('Solo vine a saludar 👋', 'user');
-  typing(() => {
-    addMsg(
-      '¡Hola! 👋 Erick agradece que pases por aquí. Si quieres conversar, escríbele un correo cuando gustes:' +
-      `<div class="field"><b>Email</b><a href="mailto:${CONTACT.email}">${CONTACT.email}</a></div>`
-    );
-    reset();
+    ACTIONS[key].run();
+    if (rest.length) {
+      addMsg('¿Algo más en lo que pueda ayudarte?');
+      showOptions(rest);
+    } else {
+      optionsEl.innerHTML = '';
+    }
   });
 }
 
 // Arranque
 addMsg('¡Hola! Soy el asistente virtual de Erick (EAx). 🤖');
 addMsg('Puedo ayudarte a contactarlo o darte sus enlaces profesionales. ¿Qué buscas?');
-setOptions(MENU);
+showOptions(Object.keys(ACTIONS));
