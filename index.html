@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erick Albornoz — EAx · Tecnología aplicada al negocio</title>
+  <meta name="description" content="Erick Collin Albornoz Hernández (EAx) — Desarrollador Full Stack e Ingeniero de Sistemas. Backend, arquitectura distribuida y automatización con IA aplicada al negocio." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a href="#work" class="brand">
+      <span class="brand-mark">EA<span>x</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#notes">Notes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">≡</button>
+  </header>
+
+  <main>
+    <!-- WORK / HERO -->
+    <section id="work" class="hero reveal">
+      <div class="hero-banner">
+        <img src="assets/eax.svg" alt="EAx — Tecnología aplicada al negocio" />
+      </div>
+      <div class="hero-row">
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/179261312?v=4" alt="Erick Albornoz" />
+        <div class="hero-text">
+          <h1>Erick Albornoz</h1>
+          <p class="role">Desarrollador Full Stack · Ingeniero de Sistemas</p>
+          <p class="lede">
+            Construyo sistemas backend donde <b>la lógica de negocio define la arquitectura</b> —
+            no al revés. Traduzco complejidad técnica en soluciones que funcionan en producción.
+          </p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#contact">Hablemos →</a>
+            <a class="btn btn-ghost" href="#projects">Ver proyectos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+      <h2><span class="bar"></span>About</h2>
+      <p class="quote">“La mayoría de los sistemas backend no fallan por mal código — fallan porque no entienden el negocio al que sirven.”</p>
+      <p>
+        Soy estudiante de <b>Ingeniería de Sistemas (9.º semestre)</b> en la Universidad Cooperativa de
+        Colombia, en Cali. Diseño backends que sobreviven condiciones reales de producción, automatizo
+        operaciones con IA y convierto datos crudos en decisiones. Empiezo <b>mapeando el negocio antes de
+        escribir código</b>: identifico qué se rompe, qué escala mal y dónde se pierden los datos.
+      </p>
+
+      <div class="stack">
+        <div class="stack-group">
+          <h3>Backend &amp; APIs</h3>
+          <ul><li>FastAPI</li><li>Spring Boot</li><li>Node.js</li><li>Next.js</li></ul>
+        </div>
+        <div class="stack-group">
+          <h3>Datos &amp; Distribuido</h3>
+          <ul><li>PostgreSQL</li><li>MySQL</li><li>Redis</li><li>Kafka</li><li>Prisma</li></ul>
+        </div>
+        <div class="stack-group">
+          <h3>DevOps &amp; IA</h3>
+          <ul><li>Docker</li><li>Kubernetes</li><li>Claude</li><li>CI/CD</li><li>Git</li></ul>
+        </div>
+        <div class="stack-group">
+          <h3>Lenguajes</h3>
+          <ul><li>Python</li><li>Java</li><li>TypeScript</li><li>JavaScript</li><li>SQL</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+      <h2><span class="bar"></span>Projects</h2>
+
+      <a class="project featured" href="https://github.com/erickcolin2005/AI_DB_AGENT" target="_blank" rel="noopener">
+        <div class="project-tag">⭐ Destacado</div>
+        <h3>AI_DB_AGENT</h3>
+        <p>Le preguntas a tu base de datos en español — <i>“¿cuánto vendí esta semana?”</i> — y devuelve la respuesta. Convierte lenguaje natural en SQL, lo ejecuta contra una base real y entrega <i>insights</i> automáticos. La IA no reemplaza al equipo, le quita la fricción.</p>
+        <div class="chips"><span>Next.js 14</span><span>Prisma</span><span>PostgreSQL</span><span>OpenAI</span><span>Docker</span></div>
+      </a>
+
+      <div class="project-grid">
+        <a class="project" href="https://github.com/erickcolin2005/Patrones_Diseno_Orientado_Objetos" target="_blank" rel="noopener">
+          <h3>Patrones de Diseño (Java)</h3>
+          <p>Implementación práctica de patrones GoF y POO en Java.</p>
+          <div class="chips"><span>Java</span><span>NetBeans</span><span>POO</span></div>
+        </a>
+        <a class="project" href="https://github.com/erickcolin2005/Patrones_Diseno" target="_blank" rel="noopener">
+          <h3>Modelado &amp; Arquitectura</h3>
+          <p>Diseño de sistemas con UML y MER a nivel de arquitectura.</p>
+          <div class="chips"><span>UML</span><span>MER</span><span>Enterprise Architect</span></div>
+        </a>
+        <div class="project static">
+          <h3>TourVista — SQA</h3>
+          <p>Aseguramiento de calidad: 5 fallas como síntoma de una sola causa. ISO/IEC 25010, AHP y quality gates con IA.</p>
+          <div class="chips"><span>ISO 25010</span><span>AHP</span><span>SQA</span></div>
+        </div>
+        <div class="project static">
+          <h3>OptiPYME — SaaS</h3>
+          <p>Formulación de un SaaS de pronóstico de demanda para PYMES del Valle, con PMBOK 7, Monte Carlo y SROI.</p>
+          <div class="chips"><span>PMBOK 7</span><span>Monte Carlo</span><span>SROI</span></div>
+        </div>
+        <div class="project static">
+          <h3>CyberEye — Product Manager</h3>
+          <p>Como PM recuperé 12 días por paralelismo ante un atraso del 70 % y sostuve la fecha final.</p>
+          <div class="chips"><span>PM</span><span>Scrum</span><span>ML</span></div>
+        </div>
+        <div class="project static">
+          <h3>Cripto — Minería de datos</h3>
+          <p>Pipeline ML sobre 23 criptomonedas con CRISP-DM: clasificación y regresión sin <i>data leakage</i>.</p>
+          <div class="chips"><span>CRISP-DM</span><span>Python</span><span>ML</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section id="notes" class="reveal">
+      <h2><span class="bar"></span>Notes</h2>
+      <p class="muted">Casos y escritos donde el problema de negocio va primero y la solución técnica después.</p>
+      <div class="notes-list">
+        <a class="note" href="https://erickcolin2005.github.io/presentaciones-ea/" target="_blank" rel="noopener">
+          <span class="note-kind">Caso</span>
+          <span class="note-title">Aseguramiento de calidad en TourVista</span>
+          <span class="note-arrow">→</span>
+        </a>
+        <a class="note" href="https://erickcolin2005.github.io/presentaciones-ea/" target="_blank" rel="noopener">
+          <span class="note-kind">Datos</span>
+          <span class="note-title">Radiación solar en Uribia con NASA POWER (2018–2025)</span>
+          <span class="note-arrow">→</span>
+        </a>
+        <a class="note" href="https://erickcolin2005.github.io/presentaciones-ea/" target="_blank" rel="noopener">
+          <span class="note-kind">Producto</span>
+          <span class="note-title">Formulación de OptiPYME como SaaS para PYMES</span>
+          <span class="note-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <h2><span class="bar"></span>Contact</h2>
+      <p class="muted">Pregúntale al asistente cómo ponerte en contacto conmigo.</p>
+
+      <div class="bot" id="bot">
+        <div class="bot-head">
+          <div class="bot-avatar">EAx</div>
+          <div>
+            <div class="bot-name">EAx Bot</div>
+            <div class="bot-sub">Pregúntame lo que sea</div>
+          </div>
+          <span class="bot-status"></span>
+        </div>
+        <div class="bot-body" id="botBody" aria-live="polite"></div>
+        <div class="bot-options" id="botOptions"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-mark">EA<span>x</span></div>
+    <p><i>Traduzco tecnología compleja en soluciones claras, útiles y vendibles.</i></p>
+    <p class="copy">© <span id="year"></span> Erick Albornoz · Cali, Colombia</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
