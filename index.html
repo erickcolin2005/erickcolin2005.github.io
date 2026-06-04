@@ -19,14 +19,17 @@
       <span class="brand-mark">EA<span>x</span></span>
     </a>
     <nav class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#certs">Certs</a>
-      <a href="#notes">Notes</a>
-      <a href="#contact">Contact</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#certs" data-i18n="nav.certs">Certs</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Menú">≡</button>
+    <div class="nav-ctrls">
+      <button class="ctrl" id="langToggle" aria-label="Cambiar idioma" title="Español / English">ES</button>
+      <button class="ctrl" id="themeToggle" aria-label="Cambiar tema" title="Claro / Oscuro">🌙</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">≡</button>
+    </div>
   </header>
 
   <main>
@@ -39,14 +42,14 @@
         <img class="avatar" src="https://avatars.githubusercontent.com/u/179261312?v=4" alt="Erick Albornoz" />
         <div class="hero-text">
           <h1>Erick Albornoz</h1>
-          <p class="role">Desarrollador Full Stack · Ingeniero de Sistemas</p>
-          <p class="lede">
+          <p class="role" data-i18n="hero.role">Desarrollador Full Stack · Ingeniero de Sistemas</p>
+          <p class="lede" data-i18n="hero.lede">
             Construyo sistemas backend donde <b>la lógica de negocio define la arquitectura</b> —
             no al revés. Traduzco complejidad técnica en soluciones que funcionan en producción.
           </p>
           <div class="cta">
-            <a class="btn btn-primary" href="#contact">Hablemos →</a>
-            <a class="btn btn-ghost" href="#projects">Ver proyectos</a>
+            <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">Hablemos →</a>
+            <a class="btn btn-ghost" href="#projects" data-i18n="hero.cta2">Ver proyectos</a>
           </div>
         </div>
       </div>
@@ -54,9 +57,9 @@
 
     <!-- ABOUT -->
     <section id="about" class="reveal">
-      <h2><span class="bar"></span>About</h2>
-      <p class="quote">“La mayoría de los sistemas backend no fallan por mal código — fallan porque no entienden el negocio al que sirven.”</p>
-      <p>
+      <h2><span class="bar"></span><span data-i18n="about.title">About</span></h2>
+      <p class="quote" data-i18n="about.quote">“La mayoría de los sistemas backend no fallan por mal código — fallan porque no entienden el negocio al que sirven.”</p>
+      <p data-i18n="about.body">
         Soy estudiante de <b>Ingeniería de Sistemas (9.º semestre)</b> en la Universidad Cooperativa de
         Colombia, en Cali. Diseño backends que sobreviven condiciones reales de producción, automatizo
         operaciones con IA y convierto datos crudos en decisiones. Empiezo <b>mapeando el negocio antes de
@@ -65,19 +68,19 @@
 
       <div class="stack">
         <div class="stack-group">
-          <h3>Backend &amp; APIs</h3>
+          <h3 data-i18n="stack.backend">Backend &amp; APIs</h3>
           <ul><li>FastAPI</li><li>Spring Boot</li><li>Node.js</li><li>Next.js</li></ul>
         </div>
         <div class="stack-group">
-          <h3>Datos &amp; Distribuido</h3>
+          <h3 data-i18n="stack.data">Datos &amp; Distribuido</h3>
           <ul><li>PostgreSQL</li><li>MySQL</li><li>Redis</li><li>Kafka</li><li>Prisma</li></ul>
         </div>
         <div class="stack-group">
-          <h3>DevOps &amp; IA</h3>
+          <h3 data-i18n="stack.devops">DevOps &amp; IA</h3>
           <ul><li>Docker</li><li>Kubernetes</li><li>Claude</li><li>CI/CD</li><li>Git</li></ul>
         </div>
         <div class="stack-group">
-          <h3>Lenguajes</h3>
+          <h3 data-i18n="stack.langs">Lenguajes</h3>
           <ul><li>Python</li><li>Java</li><li>TypeScript</li><li>JavaScript</li><li>SQL</li></ul>
         </div>
       </div>
@@ -85,72 +88,90 @@
 
     <!-- PROJECTS -->
     <section id="projects" class="reveal">
-      <h2><span class="bar"></span>Projects</h2>
+      <h2><span class="bar"></span><span data-i18n="projects.title">Projects</span></h2>
 
-      <a class="project featured" href="https://github.com/erickcolin2005/AI_DB_AGENT" target="_blank" rel="noopener">
-        <div class="project-tag">⭐ Destacado</div>
+      <div class="project featured">
+        <div class="project-tag" data-i18n="projects.featuredTag">⭐ Destacado</div>
         <h3>AI_DB_AGENT</h3>
-        <p>Le preguntas a tu base de datos en español — <i>“¿cuánto vendí esta semana?”</i> — y devuelve la respuesta. Convierte lenguaje natural en SQL, lo ejecuta contra una base real y entrega <i>insights</i> automáticos. La IA no reemplaza al equipo, le quita la fricción.</p>
-        <div class="chips"><span>Next.js 14</span><span>Prisma</span><span>PostgreSQL</span><span>OpenAI</span><span>Docker</span></div>
-      </a>
+        <p data-i18n="projects.aiDesc">Le preguntas a tu base de datos en español — <i>“¿cuánto vendí esta semana?”</i> — y devuelve la respuesta. Convierte lenguaje natural en SQL, lo ejecuta contra una base real y entrega <i>insights</i> automáticos. La IA no reemplaza al equipo, le quita la fricción.</p>
+        <div class="chips"><span>Next.js 14</span><span>FastAPI</span><span>PostgreSQL</span><span>OpenAI</span><span>Docker</span></div>
+        <div class="project-links">
+          <a class="btn btn-primary btn-sm" href="https://github.com/erickcolin2005/AI_DB_AGENT" target="_blank" rel="noopener" data-i18n="projects.repo">Repositorio ↗</a>
+          <a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/posts/erick-albornoz_nextjs-fastapi-postgresql-activity-7386885348053889024-b_h4" target="_blank" rel="noopener" data-i18n="projects.post">Ver publicación ↗</a>
+        </div>
+      </div>
 
       <div class="project-grid">
         <a class="project" href="https://github.com/erickcolin2005/Patrones_Diseno_Orientado_Objetos" target="_blank" rel="noopener">
           <h3>Patrones de Diseño (Java)</h3>
-          <p>Implementación práctica de patrones GoF y POO en Java.</p>
+          <p data-i18n="projects.patronesDesc">Implementación práctica de patrones GoF y POO en Java.</p>
           <div class="chips"><span>Java</span><span>NetBeans</span><span>POO</span></div>
+          <span class="project-go" data-i18n="projects.goRepo">Repositorio ↗</span>
         </a>
         <a class="project" href="https://github.com/erickcolin2005/Patrones_Diseno" target="_blank" rel="noopener">
-          <h3>Modelado &amp; Arquitectura</h3>
-          <p>Diseño de sistemas con UML y MER a nivel de arquitectura.</p>
+          <h3 data-i18n="projects.modeladoTitle">Modelado &amp; Arquitectura</h3>
+          <p data-i18n="projects.modeladoDesc">Diseño de sistemas con UML y MER a nivel de arquitectura.</p>
           <div class="chips"><span>UML</span><span>MER</span><span>Enterprise Architect</span></div>
+          <span class="project-go" data-i18n="projects.goRepo">Repositorio ↗</span>
         </a>
-        <div class="project static">
+        <a class="project" href="https://erickcolin2005.github.io/presentaciones-ea/validaciones/Presentacion_TourVista_GCS.html" target="_blank" rel="noopener">
           <h3>TourVista — SQA</h3>
-          <p>Aseguramiento de calidad: 5 fallas como síntoma de una sola causa. ISO/IEC 25010, AHP y quality gates con IA.</p>
+          <p data-i18n="projects.tourvistaDesc">Aseguramiento de calidad: 5 fallas como síntoma de una sola causa. ISO/IEC 25010, AHP y quality gates con IA.</p>
           <div class="chips"><span>ISO 25010</span><span>AHP</span><span>SQA</span></div>
-        </div>
-        <div class="project static">
+          <span class="project-go" data-i18n="projects.goPres">Ver presentación ↗</span>
+        </a>
+        <a class="project" href="https://erickcolin2005.github.io/presentaciones-ea/validaciones/Presentacion_FEP_Albornoz.html" target="_blank" rel="noopener">
           <h3>OptiPYME — SaaS</h3>
-          <p>Formulación de un SaaS de pronóstico de demanda para PYMES del Valle, con PMBOK 7, Monte Carlo y SROI.</p>
+          <p data-i18n="projects.optipymeDesc">Formulación de un SaaS de pronóstico de demanda para PYMES del Valle, con PMBOK 7, Monte Carlo y SROI.</p>
           <div class="chips"><span>PMBOK 7</span><span>Monte Carlo</span><span>SROI</span></div>
-        </div>
-        <div class="project static">
-          <h3>CyberEye — Product Manager</h3>
-          <p>Como PM recuperé 12 días por paralelismo ante un atraso del 70 % y sostuve la fecha final.</p>
+          <span class="project-go" data-i18n="projects.goPres">Ver presentación ↗</span>
+        </a>
+        <a class="project" href="https://erickcolin2005.github.io/presentaciones-ea/universidad/CyberEye_Momento3_Presentacion.html" target="_blank" rel="noopener">
+          <h3 data-i18n="projects.cybereyeTitle">CyberEye — Product Manager</h3>
+          <p data-i18n="projects.cybereyeDesc">Como PM recuperé 12 días por paralelismo ante un atraso del 70 % y sostuve la fecha final.</p>
           <div class="chips"><span>PM</span><span>Scrum</span><span>ML</span></div>
-        </div>
-        <div class="project static">
-          <h3>Cripto — Minería de datos</h3>
-          <p>Pipeline ML sobre 23 criptomonedas con CRISP-DM: clasificación y regresión sin <i>data leakage</i>.</p>
+          <span class="project-go" data-i18n="projects.goPres">Ver presentación ↗</span>
+        </a>
+        <a class="project" href="https://erickcolin2005.github.io/presentaciones-ea/universidad/presentacion_crypto_ML.html" target="_blank" rel="noopener">
+          <h3 data-i18n="projects.criptoTitle">Cripto — Minería de datos</h3>
+          <p data-i18n="projects.criptoDesc">Pipeline ML sobre 23 criptomonedas con CRISP-DM: clasificación y regresión sin <i>data leakage</i>.</p>
           <div class="chips"><span>CRISP-DM</span><span>Python</span><span>ML</span></div>
-        </div>
+          <span class="project-go" data-i18n="projects.goPres">Ver presentación ↗</span>
+        </a>
+        <a class="project" href="https://erickcolin2005.github.io/presentaciones-ea/validaciones/Tecnicas_Validacion_Simulacion_Caso_Uribia.html" target="_blank" rel="noopener">
+          <h3 data-i18n="projects.uribiaTitle">Uribia — NASA POWER</h3>
+          <p data-i18n="projects.uribiaDesc">Validación y simulación de radiación solar en Uribia (La Guajira) con datos de NASA POWER 2018–2025.</p>
+          <div class="chips"><span>NASA POWER</span><span>Python</span><span>Simulación</span></div>
+          <span class="project-go" data-i18n="projects.goPres">Ver presentación ↗</span>
+        </a>
       </div>
     </section>
 
     <!-- CERTIFICATES -->
     <section id="certs" class="reveal">
-      <h2><span class="bar"></span>Certificates</h2>
-      <p class="muted">25 certificaciones en desarrollo, nube, datos, IA y gobernanza digital — de Código Facilito, Santander Open Academy (MIT), AWS, MinTIC, Capacítate, MathWorks, COPNIA y más.</p>
+      <h2><span class="bar"></span><span data-i18n="certs.title">Certificates</span></h2>
+      <p class="muted" data-i18n="certs.intro">25 certificaciones en desarrollo, nube, datos, IA y gobernanza digital — de Código Facilito, Santander Open Academy (MIT), AWS, MinTIC, Capacítate, MathWorks, COPNIA y más.</p>
 
-      <div class="cert-groups">
+      <button class="btn btn-primary cert-cta" id="certToggle" aria-expanded="false" data-i18n="certs.cta">Ver mis 25 certificados ↓</button>
+
+      <div class="cert-groups" id="certGroups" hidden>
         <div class="cert-group">
-          <div class="cert-org"><span class="cert-badge cf">CF</span><div><b>Código Facilito</b><small>9 cursos · Desarrollo</small></div></div>
+          <div class="cert-org"><span class="cert-badge cf">CF</span><div><b>Código Facilito</b><small data-i18n="certs.cfSub">9 cursos · Desarrollo</small></div></div>
           <ul>
             <li><a href="certificados/cf-java.pdf" target="_blank" rel="noopener">Curso Profesional de Java</a></li>
             <li><a href="certificados/cf-javascript.pdf" target="_blank" rel="noopener">Curso Profesional de JavaScript</a></li>
             <li><a href="certificados/cf-git.pdf" target="_blank" rel="noopener">Curso Profesional de Git</a></li>
-            <li><a href="certificados/cf-arquitectura-software.pdf" target="_blank" rel="noopener">Fundamentos de Arquitectura de Software</a></li>
-            <li><a href="certificados/cf-ciencia-datos.pdf" target="_blank" rel="noopener">Bases y conceptos de la Ciencia de Datos</a></li>
-            <li><a href="certificados/cf-metodologias.pdf" target="_blank" rel="noopener">Metodologías para Solución de Problemas</a></li>
+            <li><a href="certificados/cf-arquitectura-software.pdf" target="_blank" rel="noopener" data-i18n="certs.cfArq">Fundamentos de Arquitectura de Software</a></li>
+            <li><a href="certificados/cf-ciencia-datos.pdf" target="_blank" rel="noopener" data-i18n="certs.cfDatos">Bases y conceptos de la Ciencia de Datos</a></li>
+            <li><a href="certificados/cf-metodologias.pdf" target="_blank" rel="noopener" data-i18n="certs.cfMet">Metodologías para Solución de Problemas</a></li>
             <li><a href="certificados/cf-vscode-copilot.pdf" target="_blank" rel="noopener">Visual Studio Code y GitHub Copilot</a></li>
             <li><a href="certificados/cf-docker.pdf" target="_blank" rel="noopener">Masterclass Docker</a></li>
-            <li><a href="certificados/cf-type-hints-python.pdf" target="_blank" rel="noopener">Anotaciones y Type Hints con Python</a></li>
+            <li><a href="certificados/cf-type-hints-python.pdf" target="_blank" rel="noopener" data-i18n="certs.cfTypes">Anotaciones y Type Hints con Python</a></li>
           </ul>
         </div>
 
         <div class="cert-group">
-          <div class="cert-org"><span class="cert-badge sa">S</span><div><b>Santander Open Academy</b><small>3 cursos · Contenido MIT</small></div></div>
+          <div class="cert-org"><span class="cert-badge sa">S</span><div><b>Santander Open Academy</b><small data-i18n="certs.saSub">3 cursos · Contenido MIT</small></div></div>
           <ul>
             <li><a href="certificados/big-data-santander.pdf" target="_blank" rel="noopener">Big Data <span class="cert-date">dic 2024</span></a></li>
             <li><a href="certificados/transformacion-digital-santander.pdf" target="_blank" rel="noopener">Transformación Digital <span class="cert-date">dic 2024</span></a></li>
@@ -159,78 +180,55 @@
         </div>
 
         <div class="cert-group">
-          <div class="cert-org"><span class="cert-badge aws">AWS</span><div><b>AWS · Entrena LATAM</b><small>3 cursos · Nube</small></div></div>
+          <div class="cert-org"><span class="cert-badge aws">AWS</span><div><b>AWS · Entrena LATAM</b><small data-i18n="certs.awsSub">3 cursos · Nube</small></div></div>
           <ul>
             <li><a href="certificados/aws-cloud-practitioner.pdf" target="_blank" rel="noopener">AWS Cloud Practitioner <span class="cert-date">sep 2025</span></a></li>
             <li><a href="certificados/aws-cloud-fundamentals.png" target="_blank" rel="noopener">AWS Cloud Fundamentals <span class="cert-date">2025</span></a></li>
-            <li><a href="certificados/fundamentos-nube-aws.pdf" target="_blank" rel="noopener">Fundamentos de Nube <span class="cert-date">sep 2025</span></a></li>
+            <li><a href="certificados/fundamentos-nube-aws.pdf" target="_blank" rel="noopener" data-i18n="certs.awsNube">Fundamentos de Nube <span class="cert-date">sep 2025</span></a></li>
           </ul>
         </div>
 
         <div class="cert-group">
-          <div class="cert-org"><span class="cert-badge cap">C</span><div><b>Capacítate para el Empleo</b><small>2 cursos · Fundación Carlos Slim</small></div></div>
+          <div class="cert-org"><span class="cert-badge cap">C</span><div><b>Capacítate para el Empleo</b><small>Fundación Carlos Slim</small></div></div>
           <ul>
-            <li><a href="certificados/admin-bases-datos-capacitate.pdf" target="_blank" rel="noopener">Administrador de Bases de Datos <span class="cert-date">may 2025</span></a></li>
-            <li><a href="certificados/fundamentos-ia-capacitate.pdf" target="_blank" rel="noopener">Fundamentos de Inteligencia Artificial <span class="cert-date">oct 2025</span></a></li>
+            <li><a href="certificados/admin-bases-datos-capacitate.pdf" target="_blank" rel="noopener" data-i18n="certs.capDb">Administrador de Bases de Datos <span class="cert-date">may 2025</span></a></li>
+            <li><a href="certificados/fundamentos-ia-capacitate.pdf" target="_blank" rel="noopener" data-i18n="certs.capIa">Fundamentos de Inteligencia Artificial <span class="cert-date">oct 2025</span></a></li>
           </ul>
         </div>
 
         <div class="cert-group">
-          <div class="cert-org"><span class="cert-badge mintic">TT</span><div><b>MinTIC · TalentoTech</b><small>4 cursos · Gobierno Digital</small></div></div>
+          <div class="cert-org"><span class="cert-badge mintic">TT</span><div><b>MinTIC · TalentoTech</b><small data-i18n="certs.minticSub">4 cursos · Gobierno Digital</small></div></div>
           <ul>
-            <li><a href="certificados/ia-aplicada-mintic.pdf" target="_blank" rel="noopener">Inteligencia Artificial Aplicada <span class="cert-date">dic 2024</span></a></li>
-            <li><a href="certificados/infraestructura-datos-mintic.pdf" target="_blank" rel="noopener">Plan Nacional de Infraestructura de Datos <span class="cert-date">dic 2024</span></a></li>
-            <li><a href="certificados/cuarta-revolucion-industrial-mintic.pdf" target="_blank" rel="noopener">Cuarta Revolución Industrial <span class="cert-date">dic 2024</span></a></li>
-            <li><a href="certificados/ciudades-inteligentes-mintic.pdf" target="_blank" rel="noopener">Ciudades Inteligentes <span class="cert-date">dic 2024</span></a></li>
+            <li><a href="certificados/ia-aplicada-mintic.pdf" target="_blank" rel="noopener" data-i18n="certs.minticIa">Inteligencia Artificial Aplicada <span class="cert-date">dic 2024</span></a></li>
+            <li><a href="certificados/infraestructura-datos-mintic.pdf" target="_blank" rel="noopener" data-i18n="certs.minticInfra">Plan Nacional de Infraestructura de Datos <span class="cert-date">dic 2024</span></a></li>
+            <li><a href="certificados/cuarta-revolucion-industrial-mintic.pdf" target="_blank" rel="noopener" data-i18n="certs.minticRev">Cuarta Revolución Industrial <span class="cert-date">dic 2024</span></a></li>
+            <li><a href="certificados/ciudades-inteligentes-mintic.pdf" target="_blank" rel="noopener" data-i18n="certs.minticCiudades">Ciudades Inteligentes <span class="cert-date">dic 2024</span></a></li>
           </ul>
         </div>
 
         <div class="cert-group">
-          <div class="cert-org"><span class="cert-badge other">+</span><div><b>Otras credenciales</b><small>4 · Ingeniería, datos e inglés</small></div></div>
+          <div class="cert-org"><span class="cert-badge other">+</span><div><b data-i18n="certs.otherTitle">Otras credenciales</b><small data-i18n="certs.otherSub">4 · Ingeniería, datos e inglés</small></div></div>
           <ul>
             <li><a href="certificados/matlab-onramp-mathworks.pdf" target="_blank" rel="noopener">MATLAB Onramp <span class="cert-date">MathWorks · oct 2024</span></a></li>
-            <li><a href="certificados/etica-profesional-copnia.pdf" target="_blank" rel="noopener">Ética Profesional <span class="cert-date">COPNIA · oct 2023</span></a></li>
-            <li><a href="certificados/ingles-b2-smalltalk.pdf" target="_blank" rel="noopener">Inglés B2 (Upper-intermediate) <span class="cert-date">SmallTalk · dic 2024</span></a></li>
-            <li><a href="certificados/desarrollo-apps-moviles.pdf" target="_blank" rel="noopener">Desarrollo de Apps Móviles <span class="cert-date">dic 2025</span></a></li>
+            <li><a href="certificados/etica-profesional-copnia.pdf" target="_blank" rel="noopener" data-i18n="certs.etica">Ética Profesional <span class="cert-date">COPNIA · oct 2023</span></a></li>
+            <li><a href="certificados/ingles-b2-smalltalk.pdf" target="_blank" rel="noopener" data-i18n="certs.ingles">Inglés B2 (Upper-intermediate) <span class="cert-date">SmallTalk · dic 2024</span></a></li>
+            <li><a href="certificados/desarrollo-apps-moviles.pdf" target="_blank" rel="noopener" data-i18n="certs.apps">Desarrollo de Apps Móviles <span class="cert-date">dic 2025</span></a></li>
           </ul>
         </div>
-      </div>
-    </section>
-
-    <!-- NOTES -->
-    <section id="notes" class="reveal">
-      <h2><span class="bar"></span>Notes</h2>
-      <p class="muted">Casos y escritos donde el problema de negocio va primero y la solución técnica después.</p>
-      <div class="notes-list">
-        <a class="note" href="https://erickcolin2005.github.io/presentaciones-ea/validaciones/Presentacion_TourVista_GCS.html" target="_blank" rel="noopener">
-          <span class="note-kind">Calidad</span>
-          <span class="note-title">Aseguramiento de calidad en TourVista (SQA · ISO 25010)</span>
-          <span class="note-arrow">→</span>
-        </a>
-        <a class="note" href="https://erickcolin2005.github.io/presentaciones-ea/validaciones/Tecnicas_Validacion_Simulacion_Caso_Uribia.html" target="_blank" rel="noopener">
-          <span class="note-kind">Datos</span>
-          <span class="note-title">Radiación solar en Uribia con NASA POWER (2018–2025)</span>
-          <span class="note-arrow">→</span>
-        </a>
-        <a class="note" href="https://erickcolin2005.github.io/presentaciones-ea/universidad/CyberEye_Momento3_Presentacion.html" target="_blank" rel="noopener">
-          <span class="note-kind">PM</span>
-          <span class="note-title">CyberEye — gestión de proyecto como Product Manager</span>
-          <span class="note-arrow">→</span>
-        </a>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="reveal">
-      <h2><span class="bar"></span>Contact</h2>
-      <p class="muted">Pregúntale al asistente cómo ponerte en contacto conmigo.</p>
+      <h2><span class="bar"></span><span data-i18n="contact.title">Contact</span></h2>
+      <p class="muted" data-i18n="contact.sub">Pregúntale al asistente cómo ponerte en contacto conmigo.</p>
 
       <div class="bot" id="bot">
         <div class="bot-head">
           <div class="bot-avatar">EAx</div>
           <div>
             <div class="bot-name">EAx Bot</div>
-            <div class="bot-sub">Pregúntame lo que sea</div>
+            <div class="bot-sub" data-i18n="contact.botSub">Pregúntame lo que sea</div>
           </div>
           <span class="bot-status"></span>
         </div>
@@ -242,7 +240,7 @@
 
   <footer>
     <div class="foot-mark">EA<span>x</span></div>
-    <p><i>Traduzco tecnología compleja en soluciones claras, útiles y vendibles.</i></p>
+    <p><i data-i18n="footer.tag">Traduzco tecnología compleja en soluciones claras, útiles y vendibles.</i></p>
     <p class="copy">© <span id="year"></span> Erick Albornoz · Cali, Colombia</p>
   </footer>
 

@@ -10,7 +10,27 @@
   --muted: #94a3b8;
   --radius: 16px;
   --maxw: 860px;
+  --chip-bg: rgba(245,158,11,.12);
+  --chip-line: rgba(245,158,11,.25);
+  --chip-text: #fcd34d;
+  --grid-1: #0b1220;
 }
+
+/* LIGHT THEME */
+body.light {
+  --bg: #f6f8fc;
+  --bg-2: #ffffff;
+  --surface: #ffffff;
+  --line: #e2e8f0;
+  --text: #0f172a;
+  --muted: #5b6678;
+  --grid-1: #eef2f9;
+  --chip-text: #b45309;
+}
+body.light .nav { background: rgba(246,248,252,0.78); }
+body.light .msg.bot { background: #f1f5f9; }
+body.light .cert-group li a { color: #1e293b; }
+body.light .quote { color: #334155; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -30,7 +50,7 @@ body {
   background:
     radial-gradient(900px 500px at 80% -10%, rgba(245,158,11,0.10), transparent 60%),
     radial-gradient(700px 500px at 0% 10%, rgba(37,99,235,0.10), transparent 55%),
-    linear-gradient(180deg, #0b1220, var(--bg));
+    linear-gradient(180deg, var(--grid-1), var(--bg));
 }
 
 h1, h2, h3, .brand-mark, .foot-mark { font-family: 'M PLUS Rounded 1c', system-ui, sans-serif; }
@@ -60,6 +80,14 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-links a:hover::after { width: 100%; }
 .nav-toggle { display: none; background: none; border: 0; color: var(--text); font-size: 24px; cursor: pointer; }
+.nav-ctrls { display: flex; align-items: center; gap: 8px; }
+.ctrl {
+  border: 1px solid var(--line); background: var(--bg-2); color: var(--text);
+  width: 38px; height: 34px; border-radius: 10px; cursor: pointer; font-family: inherit;
+  font-weight: 700; font-size: 13px; display: grid; place-items: center;
+  transition: border-color .2s, transform .12s;
+}
+.ctrl:hover { border-color: var(--brand); transform: translateY(-1px); }
 
 /* LAYOUT */
 main { max-width: var(--maxw); margin: 0 auto; padding: 0 22px 40px; }
@@ -92,6 +120,7 @@ section h2 {
 .btn-primary:hover { background: var(--brand-dk); }
 .btn-ghost { border: 1px solid var(--line); color: var(--text); }
 .btn-ghost:hover { border-color: var(--brand); }
+.btn-sm { padding: 8px 15px; font-size: 13.5px; }
 
 /* ABOUT */
 .quote {
@@ -126,11 +155,20 @@ section h2 {
 .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
 .chips span {
   font-size: 12px; padding: 4px 9px; border-radius: 7px;
-  background: rgba(245,158,11,.12); border: 1px solid rgba(245,158,11,.25); color: #fcd34d;
+  background: var(--chip-bg); border: 1px solid var(--chip-line); color: var(--chip-text);
 }
+.project-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.project-go {
+  display: inline-block; margin-top: 14px; color: var(--brand);
+  font-weight: 600; font-size: 13.5px; transition: gap .2s;
+}
+.project:hover .project-go { text-decoration: underline; }
 
 /* CERTIFICATES */
+.cert-cta { margin-top: 16px; border: 0; cursor: pointer; font-family: inherit; }
+.cert-cta.open { background: var(--bg-2); color: var(--text); border: 1px solid var(--line); box-shadow: none; }
 .cert-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 18px; }
+.cert-groups[hidden] { display: none; }
 .cert-group {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 18px 20px; transition: border-color .2s, transform .15s;
@@ -162,21 +200,7 @@ section h2 {
 .cert-group li a:hover::before { content: '↗'; }
 .cert-date { color: var(--muted); font-size: 11.5px; white-space: nowrap; }
 
-/* NOTES */
 .muted { color: var(--muted); }
-.notes-list { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
-.note {
-  display: flex; align-items: center; gap: 14px; padding: 14px 18px;
-  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-  transition: border-color .2s, transform .15s;
-}
-.note:hover { border-color: var(--brand); transform: translateX(4px); }
-.note-kind {
-  font-size: 12px; font-weight: 700; color: #0f172a; background: var(--brand);
-  padding: 3px 10px; border-radius: 999px; flex-shrink: 0;
-}
-.note-title { flex: 1; font-weight: 500; }
-.note-arrow { color: var(--brand); font-size: 18px; }
 
 /* BOT */
 .bot {
