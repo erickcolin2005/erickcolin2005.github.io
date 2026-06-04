@@ -87,16 +87,23 @@ function showOptions(keys) {
   setOptions(keys.map(k => ({ label: ACTIONS[k].label, ghost: ACTIONS[k].ghost, action: () => pick(k) })));
 }
 
+const used = new Set();
 let askedMore = false;
 function pick(key) {
   addMsg(ACTIONS[key].label, 'user');
+  used.add(key);
+  const rest = Object.keys(ACTIONS).filter(k => !used.has(k));
   typing(() => {
     ACTIONS[key].run();
-    if (!askedMore) {
-      addMsg('¿Algo más en lo que pueda ayudarte?');
-      askedMore = true;
+    if (rest.length) {
+      if (!askedMore) {
+        addMsg('¿Algo más en lo que pueda ayudarte?');
+        askedMore = true;
+      }
+      showOptions(rest);
+    } else {
+      optionsEl.innerHTML = '';
     }
-    showOptions(Object.keys(ACTIONS));
   });
 }
 
