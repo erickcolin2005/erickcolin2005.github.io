@@ -89,15 +89,10 @@ function showOptions(keys) {
 
 function pick(key) {
   addMsg(ACTIONS[key].label, 'user');
-  const rest = Object.keys(ACTIONS).filter(k => k !== key);
   typing(() => {
     ACTIONS[key].run();
-    if (rest.length) {
-      addMsg('¿Algo más en lo que pueda ayudarte?');
-      showOptions(rest);
-    } else {
-      optionsEl.innerHTML = '';
-    }
+    addMsg('¿Algo más en lo que pueda ayudarte?');
+    showOptions(Object.keys(ACTIONS));
   });
 }
 
