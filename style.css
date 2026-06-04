@@ -25,7 +25,9 @@ body.light {
   --text: #0f172a;
   --muted: #5b6678;
   --grid-1: #eef2f9;
-  --chip-text: #b45309;
+  --chip-bg: rgba(245,158,11,.20);
+  --chip-line: rgba(245,158,11,.55);
+  --chip-text: #92400e;
 }
 body.light .nav { background: rgba(246,248,252,0.78); }
 body.light .msg.bot { background: #f1f5f9; }
