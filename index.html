@@ -36,7 +36,37 @@
     <!-- WORK / HERO -->
     <section id="work" class="hero reveal">
       <div class="hero-banner">
-        <img src="assets/eax.svg" alt="EAx — Tecnología aplicada al negocio" />
+        <svg viewBox="0 0 820 220" role="img" aria-label="EAx — Tecnología aplicada al negocio" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0f172a"/>
+              <stop offset="100%" stop-color="#1e293b"/>
+            </linearGradient>
+            <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#f59e0b">
+                <animate attributeName="stop-color" values="#f59e0b;#2563eb;#f59e0b" dur="4s" repeatCount="indefinite"/>
+              </stop>
+              <stop offset="100%" stop-color="#2563eb">
+                <animate attributeName="stop-color" values="#2563eb;#f59e0b;#2563eb" dur="4s" repeatCount="indefinite"/>
+              </stop>
+            </linearGradient>
+          </defs>
+          <rect width="820" height="220" rx="18" fill="url(#bg)"/>
+          <g transform="translate(410 100)" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-weight="800">
+            <animateTransform attributeName="transform" type="translate" values="0 -7; 0 7; 0 -7" dur="3s" repeatCount="indefinite" additive="sum"/>
+            <text x="0" y="0" font-size="112" letter-spacing="4">
+              <tspan fill="#f8fafc">EA</tspan><tspan fill="#f59e0b">x</tspan>
+            </text>
+          </g>
+          <rect y="138" height="8" rx="4" fill="url(#bar)">
+            <animate attributeName="width" values="0;260;0" dur="4s" repeatCount="indefinite"/>
+            <animate attributeName="x" values="410;280;410" dur="4s" repeatCount="indefinite"/>
+          </rect>
+          <text x="410" y="180" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="19" font-weight="600" letter-spacing="6" fill="#94a3b8">
+            <tspan data-i18n="banner.tagline">TECNOLOGÍA APLICADA AL NEGOCIO</tspan>
+            <animate attributeName="opacity" values="0.55;1;0.55" dur="3s" repeatCount="indefinite"/>
+          </text>
+        </svg>
       </div>
       <div class="hero-row">
         <img class="avatar" src="https://avatars.githubusercontent.com/u/179261312?v=4" alt="Erick Albornoz" />

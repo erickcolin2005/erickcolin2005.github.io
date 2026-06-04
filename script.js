@@ -38,6 +38,7 @@ certToggle.addEventListener('click', () => {
 const I18N = {
   es: {
     'nav.work': 'Inicio', 'nav.about': 'Sobre mí', 'nav.projects': 'Proyectos', 'nav.certs': 'Certificados', 'nav.contact': 'Contacto',
+    'banner.tagline': 'TECNOLOGÍA APLICADA AL NEGOCIO',
     'hero.role': 'Desarrollador Full Stack · Ingeniero de Sistemas',
     'hero.lede': 'Construyo sistemas backend donde <b>la lógica de negocio define la arquitectura</b> — no al revés. Traduzco complejidad técnica en soluciones que funcionan en producción.',
     'hero.cta1': 'Hablemos →', 'hero.cta2': 'Ver proyectos',
@@ -69,6 +70,7 @@ const I18N = {
   },
   en: {
     'nav.work': 'Home', 'nav.about': 'About', 'nav.projects': 'Projects', 'nav.certs': 'Certificates', 'nav.contact': 'Contact',
+    'banner.tagline': 'TECHNOLOGY APPLIED TO BUSINESS',
     'hero.role': 'Full Stack Developer · Systems Engineer',
     'hero.lede': 'I build backend systems where <b>business logic drives the architecture</b> — not the other way around. I turn technical complexity into solutions that run in production.',
     'hero.cta1': "Let's talk →", 'hero.cta2': 'See projects',
