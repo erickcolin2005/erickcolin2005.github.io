@@ -1,6 +1,6 @@
 // ---- Datos de contacto (edita aquí) ----
 const CONTACT = {
-  email: 'ercoalhe2@gmail.com',
+  email: 'ercoalhe3@gmail.com',
   phone: '+57 315 604 2115',
   linkedin: { label: 'erick-albornoz', url: 'https://www.linkedin.com/in/erick-albornoz' },
   github: { label: 'erickcolin2005', url: 'https://github.com/erickcolin2005' },
