@@ -272,6 +272,15 @@ footer { text-align: center; padding: 40px 22px; border-top: 1px solid var(--lin
 .foot-mark span { color: var(--brand); }
 footer i { color: var(--muted); display: block; margin: 10px 0; }
 .copy { color: var(--muted); font-size: 13px; }
+.social { display: flex; justify-content: center; gap: 12px; margin: 16px 0 18px; }
+.social a {
+  width: 42px; height: 42px; border-radius: 50%;
+  display: grid; place-items: center; color: var(--muted);
+  border: 1px solid var(--line); background: var(--bg-2);
+  transition: color .2s, border-color .2s, transform .15s, background .2s;
+}
+.social a:hover { color: #0f172a; background: var(--brand); border-color: var(--brand); transform: translateY(-3px); }
+.social svg { width: 20px; height: 20px; }
 
 /* REVEAL */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }

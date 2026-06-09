@@ -1,9 +1,17 @@
 // ---- Datos de contacto (edita aquí) ----
 const CONTACT = {
   email: 'ercoalhe3@gmail.com',
-  phone: '+57 315 604 2115',
+  phone: '+57 320 506 5780',
   linkedin: { label: 'erick-albornoz', url: 'https://www.linkedin.com/in/erick-albornoz' },
   github: { label: 'erickcolin2005', url: 'https://github.com/erickcolin2005' },
+};
+
+// ---- Redes sociales (edita aquí) ----
+const SOCIAL = {
+  whatsapp:  { label: 'wa.me/573205065780', url: 'https://wa.me/573205065780' },
+  instagram: { label: '@erickalbornoz_',   url: 'https://www.instagram.com/erickalbornoz_/' },
+  tiktok:    { label: '@erickalbornoz_',   url: 'https://www.tiktok.com/@erickalbornoz_' },
+  facebook:  { label: 'Erick Albornoz',    url: 'https://www.facebook.com/profile.php?id=61590519305615' },
 };
 
 // ---- Nav: scroll state + menú móvil ----
@@ -235,7 +243,10 @@ function buildActions() {
       run() {
         addMsg(t.linksMsg +
           `<div class="field"><b>LinkedIn</b><a href="${CONTACT.linkedin.url}" target="_blank" rel="noopener">${CONTACT.linkedin.label}</a></div>` +
-          `<div class="field"><b>GitHub</b><a href="${CONTACT.github.url}" target="_blank" rel="noopener">${CONTACT.github.label}</a></div>`);
+          `<div class="field"><b>GitHub</b><a href="${CONTACT.github.url}" target="_blank" rel="noopener">${CONTACT.github.label}</a></div>` +
+          `<div class="field"><b>Instagram</b><a href="${SOCIAL.instagram.url}" target="_blank" rel="noopener">${SOCIAL.instagram.label}</a></div>` +
+          `<div class="field"><b>TikTok</b><a href="${SOCIAL.tiktok.url}" target="_blank" rel="noopener">${SOCIAL.tiktok.label}</a></div>` +
+          `<div class="field"><b>Facebook</b><a href="${SOCIAL.facebook.url}" target="_blank" rel="noopener">${SOCIAL.facebook.label}</a></div>`);
       },
     },
     hello: {
